@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.coursera.desenvagil.controller.UsuarioController;
-import org.coursera.desenvagil.dao.GenericDAO;
+import org.coursera.desenvagil.dao.UsuarioDAO;
 import org.coursera.desenvagil.model.Usuario;
 
 @WebServlet("/criar-conta")
@@ -24,14 +24,12 @@ public class CriarContaServlet extends HttpServlet {
 		u.setLogin(request.getParameter("login"));
 		u.setEmail(request.getParameter("email"));
 		u.setSenha(request.getParameter("senha"));
-		if (UsuarioController.validarUsuario(u).length() == 0) {
-			GenericDAO<Usuario> dao = new GenericDAO<Usuario>();
-			dao.inserir(u);
+		if (UsuarioController.inserir(u).length() == 0) {
 			request.setAttribute("sucesso", "Conta criada com sucesso. <a href='login'>Clique aqui para fazer login.</a>");
 			request.getRequestDispatcher("criar-conta.jsp").forward(request, response);
 		}
 		else {
-			request.setAttribute("erro", UsuarioController.validarUsuario(u));
+			request.setAttribute("erro", UsuarioController.inserir(u));
 			request.getRequestDispatcher("criar-conta.jsp").forward(request, response);
 		}
 	}

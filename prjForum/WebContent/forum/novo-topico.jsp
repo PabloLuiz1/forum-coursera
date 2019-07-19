@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
@@ -36,27 +37,34 @@
 		</header>
 	</div>
 	<div class="container mt-4 p-0">
-		<form action="#" method="POST" class="col-md-6 mx-auto">
+		<c:if test="${erro != null}">
+			<div class="alert alert-danger alert-dismissible fade show">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>${erro}</strong>
+			</div>
+		</c:if>
+		<form action="novo-topico" method="POST" class="col-md-6 mx-auto">
 			<h6>Preencha as informações do tópico para postá-lo.</h6>
 			<hr>
 			<div class="form-group">
-				<label for="titulo" class="font-weight-bold">Título: <span
-					class="text-danger">*</span></label> <input type="text" name="titulo"
-					class="form-control" placeholder="Título do tópico" required>
+				<input type="text" id="titulo" name="titulo"
+					class="form-control" placeholder="Título" onkeyup="validarTitulo(this.value, this.id)" maxlength="80" required>
+					<small
+					id="tituloHelp" class="form-text text-muted"> O título do tópico deve conter entre 2 e 80 caracteres. </small>
 			</div>
 			<div class="form-group">
-				<label for="conteudo" class="font-weight-bold">Conteúdo: <span
-					class="text-danger">*</span></label>
-				<textarea name="conteudo" class="form-control"
-					placeholder="Conteúdo do tópico" required rows="6"></textarea>
+				<textarea id="conteudo" name="conteudo" class="form-control"
+					placeholder="Conteúdo" onkeyup="validarConteudo(this.value, this.id)" required maxlength="800" rows="6"></textarea>
+					<small
+					id="conteudoHelp" class="form-text text-muted"> O conteúdo do tópico deve conter entre 2 e 1000 caracteres. </small>
 			</div>
 			<div class="form-group">
 				<div class="bg-light mb-3">
-					Todos os campos com <span class="text-danger">*</span> são <span
+					Todos os campos com são <span
 						class="font-weight-bold">obrigatórios.</span>
 				</div>
-				<button type="reset"
-					class="btn btn-danger font-weight-bold pull-left">Cancelar</button>
+				<a href="novo-topico"
+					class="btn btn-danger font-weight-bold pull-left">Cancelar</a>
 				<button type="submit"
 					class="btn btn-primary font-weight-bold pull-right">Postar</button>
 			</div>
@@ -69,7 +77,8 @@
 		</div>
 	</footer>
 </body>
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/validarFormTopico.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 </html>

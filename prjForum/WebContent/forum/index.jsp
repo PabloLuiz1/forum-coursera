@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -18,7 +18,8 @@
 	<div class="container-fluid mx-0 p-0">
 		<header class="bg-secondary">
 			<div class="alert alert-light col-md-2">
-				Olá <strong>${usuario.nome}</strong> <a class="badge badge-danger ml-1 font-weight-bold" href="logout">deslogar</a>
+				Olá <strong>${usuario.nome}</strong> <a
+					class="badge badge-danger ml-1 font-weight-bold" href="logout">deslogar</a>
 			</div>
 			<h3 class="text-white ml-4 pt-4 pb-4">Fórum - Tópicos criados</h3>
 			<nav class="navbar navbar-expand-sm bg-gray navbar-light">
@@ -27,20 +28,21 @@
 					<ul class="navbar-nav">
 						<li class="nav-item active"><a class="nav-link" href="#">Início</a>
 						</li>
-						<li class="nav-item"><a class="nav-link"
-							href="novo-topico">Novo tópico</a></li>
+						<li class="nav-item"><a class="nav-link" href="novo-topico">Novo
+								tópico</a></li>
 						<li class="nav-item"><a class="nav-link" href="ranking">Ranking</a></li>
-						</li>
 					</ul>
 				</nav>
 			</nav>
 		</header>
 	</div>
 	<div class="container mt-4 p-0" style="min-height: 496px;">
-		<h3>Exibindo os tópicos criados: </h3>
+		<h3>Exibindo os tópicos criados:</h3>
 		<hr>
-		<a href="novo-topico"><button class="btn btn-primary font-weight-bold float-left mb-1">Novo tópico</button></a>
-		<a href="#"><button class="btn btn-primary font-weight-bold float-right mb-1">Ranking</button></a>
+		<a href="novo-topico"><button
+				class="btn btn-primary font-weight-bold float-left mb-1">Novo
+				tópico</button></a> <a href="ranking"><button
+				class="btn btn-primary font-weight-bold float-right mb-1"> <i class="fas fa-list-ol"></i> Ranking</button></a>
 		<table class="table-bordered table-hover table text-center">
 			<thead class="thead-dark font-weight-bold">
 				<tr>
@@ -50,11 +52,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>#</td>
-					<td>#</td>
-					<td>#</td>
-				</tr>
+				<c:if test="${topicos eq null}">
+					<tr>
+						<td colspan="3">${mensagem}</td>
+					</tr>
+				</c:if>
+				<c:forEach items="${topicos}" var="topico">
+					<tr>
+						<td>${topico.titulo}</td>
+						<td>${topico.usuario.login}</td>
+						<td><a href="ver-topico?topico=${topico.id}"><i class="fas fa-newspaper"></i> Ver</a></td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>
