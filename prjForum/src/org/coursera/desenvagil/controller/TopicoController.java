@@ -10,7 +10,7 @@ import org.coursera.desenvagil.model.Usuario;
 
 public class TopicoController {
 	public static String validarTopico(Topico t, Usuario usuario) {
-		return validarTitulo(t).concat(validarConteudo(t)).concat(UsuarioController.validarUsuario(usuario));
+		return validarTitulo(t).concat(validarConteudo(t));
 	}
 
 	private static String validarTitulo(Topico t) {
@@ -21,7 +21,7 @@ public class TopicoController {
 	}
 
 	private static String validarConteudo(Topico t) {
-		if (t.getConteudo().length() < 2 || t.getConteudo().length() > 80) {
+		if (t.getConteudo().length() < 2 || t.getConteudo().length() > 1000) {
 			return "O conteúdo do tópico deve ter entre 2 e 1000 caracteres.";
 		}
 		return "";

@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="UTF-8"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<title>Erro de sessÃ£o</title>
+<title>Erro de sessão</title>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -34,14 +34,14 @@
 	</div>
 	<div class="container mt-4 p-0" style="min-height: 496px;">
 		<div class="alert alert-danger">
-			<strong>VocÃª precisa estar logado para acessar esta pÃ¡gina. <a href="login">Clique aqui para fazer o login.</a></strong>
+			<strong>Você precisa estar logado para acessar esta página. <a href="login">Clique aqui para fazer o login.</a></strong>
 			<br>
 		</div>
 	</div>
 	<footer class="bg-secondary container-fluid text-white">
 		<div class="row">
-			<div class="col text-center">FÃ³rum desenvolvido por Pablo Luiz
-				Ribeiro para fins acadÃªmicos.</div>
+			<div class="col text-center">Fórum desenvolvido por Pablo Luiz
+				Ribeiro para fins acadêmicos.</div>
 		</div>
 	</footer>
 </body>

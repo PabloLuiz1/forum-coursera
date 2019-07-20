@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="UTF-8"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -48,12 +48,12 @@
 			</div>
 		</c:if>
 		<form action="criar-conta" method="POST" class="col-md-8 mx-auto">
-			<h6>Preencha suas informaÃ§Ãµes para criar uma conta no fÃ³rum.</h6>
+			<h6>Preencha suas informações para criar uma conta no fórum.</h6>
 			<hr>
 			<div class="form-group">
 				<input type="text" id="nome" name="nome" class="form-control"
 					placeholder="Nome" maxlength="200"
-					onkeyup="validarNome(this.value, this.id)" required> <small
+					onblur="validarNome(this.value, this.id)" required> <small
 					id="nomeHelp" class="form-text text-muted"> Insira o seu
 					nome e sobrenome completos. </small>
 			</div>
@@ -62,16 +62,16 @@
 					<div class="col">
 						<input type="text" id="login" name="login" class="form-control"
 							placeholder="Login" maxlength="15"
-							onkeyup="validarLogin(this.value, this.id)" required> <small
+							onblur="validarLogin(this.value, this.id)" required pattern="^[a-zA-Z0-9]+$"> <small
 							id="loginHelp" class="form-text text-muted"> Precisa ter
-							entre 4 e 15 caracteres. </small>
+							entre 4 e 15 caracteres. Apenas letras e números.</small>
 					</div>
 					<div class="col">
 						<input type="email" id="email" name="email" class="form-control"
 							placeholder="E-mail" maxlength="50"
-							onkeyup="validarEmail(this.value, this.id)" required> <small
+							onblur="validarEmail(this.value, this.id)" required> <small
 							id="emailHelp" class="form-text text-muted"> Insira um
-							e-mail vÃ¡lido e que vocÃª tenha acesso. </small>
+							e-mail válido e que você tenha acesso. </small>
 					</div>
 				</div>
 			</div>
@@ -80,7 +80,7 @@
 					<div class="col">
 						<input type="password" id="senha" name="senha"
 							class="form-control" maxlength="20" placeholder="Senha"
-							onkeyup="validarSenha(this.value, this.id)" required> <small
+							onblur="validarSenha(this.value, this.id)" required> <small
 							id="senhaHelp" class="form-text text-muted"> Precisa ter
 							entre 5 e 20 caracteres. </small>
 					</div>
@@ -88,7 +88,7 @@
 						<input type="password" id="confirmarSenha" name="confirmarSenha"
 							class="form-control" placeholder="Confirmar a senha"
 							maxlength="20"
-							onkeyup="validarConfirmacaoSenha(senha.value, this.value, this.id)"
+							onblur="validarConfirmacaoSenha(senha.value, this.value, this.id)"
 							required disabled> <small id="confirmarSenhaHelp"
 							class="form-text text-muted"> Confirme a senha. </small>
 					</div>
@@ -96,7 +96,7 @@
 			</div>
 			<div class="form-group">
 				<div class="bg-light mb-3">
-					Todos os campos sÃ£o <span class="font-weight-bold">obrigatÃ³rios.</span>
+					Todos os campos são <span class="font-weight-bold">obrigatórios.</span>
 				</div>
 				<a href="criar-conta"
 					class="btn btn-danger font-weight-bold pull-left">Cancelar</a>
@@ -107,8 +107,8 @@
 	</div>
 	<footer class="bg-secondary container-fluid text-white float-left mt-5">
 		<div class="row">
-			<div class="col text-center">FÃ³rum desenvolvido por Pablo Luiz
-				Ribeiro para fins acadÃªmicos.</div>
+			<div class="col text-center">Fórum desenvolvido por Pablo Luiz
+				Ribeiro para fins acadêmicos.</div>
 		</div>
 	</footer>
 </body>

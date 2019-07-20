@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<title>F√≥rum - Ver t√≥pico</title>
+<title>FÛrum - Ver tÛpico</title>
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -18,17 +18,17 @@
 	<div class="container-fluid mx-0 p-0">
 		<header class="bg-secondary">
 			<div class="alert alert-light col-md-2">
-				Ol√° <strong>${usuario.nome}</strong> <a
+				Ol· <strong>${usuario.nome}</strong> <a
 					class="badge badge-danger ml-1 font-weight-bold" href="logout">deslogar</a>
 			</div>
-			<h3 class="text-white ml-4 pt-4 pb-4">F√≥rum - Ver t√≥pico</h3>
+			<h3 class="text-white ml-4 pt-4 pb-4">FÛrum - Ver tÛpico</h3>
 			<nav class="navbar navbar-expand-sm bg-gray navbar-light">
 				<nav
 					class="pt-0 pb-0 m-auto navbar navbar-expand-sm bg-secondary navbar-dark justify-content-center font-weight-bold">
 					<ul class="navbar-nav">
-						<li class="nav-item"><a class="nav-link" href="../forum">In√≠cio</a></li>
+						<li class="nav-item"><a class="nav-link" href="../forum">InÌcio</a></li>
 						<li class="nav-item"><a class="nav-link" href="novo-topico">Novo
-								t√≥pico</a></li>
+								tÛpico</a></li>
 						<li class="nav-item"><a class="nav-link" href="ranking">Ranking</a></li>
 						</li>
 					</ul>
@@ -52,7 +52,7 @@
 					<hr>
 					<p>${topico.conteudo}</p>
 					<hr>
-					<h4>Coment√°rios:</h4>
+					<h4>Coment·rios:</h4>
 					<c:if test="${comentarios == null}">
 					${mensagem}
 					<br>
@@ -63,15 +63,16 @@
 							${comentario.comentario} <br> <small><i>postado
 									por </i><strong>${comentario.usuario.login}</strong></small>
 						</div>
+						<br>
 					</c:forEach>
 					<br>
 					<hr>
-					<h4>Fa√ßa um coment√°rio:</h4>
+					<h4>FaÁa um coment·rio:</h4>
 					<form action="ver-topico?topico=${topico.id}" method="POST"
 						class="form-horizontal p-0">
-						<textarea id="comentario" name="comentario" class="form-control" rows="2" maxlength="1000" onkeyup="validarComentario(this.value, this.id)"></textarea>
+						<textarea id="comentario" name="comentario" class="form-control" rows="2" maxlength="1000" onkeyup="validarComentario(this.value, this.id)" required></textarea>
 						<small
-					id="comentarioHelp" class="form-text text-muted"> O coment√°rio deve conter no m√°ximo 1000 caracteres. </small>
+					id="comentarioHelp" class="form-text text-muted"> O coment·rio deve conter no m·ximo 1000 caracteres. </small>
 						<button type="submit"
 							class="btn btn-primary pull-right mt-2 font-weight-bold">Postar</button>
 					</form>
@@ -81,8 +82,8 @@
 	</div>
 	<footer class="bg-secondary container-fluid text-white">
 		<div class="row">
-			<div class="col text-center">F√≥rum desenvolvido por Pablo Luiz
-				Ribeiro para fins acad√™micos.</div>
+			<div class="col text-center">FÛrum desenvolvido por Pablo Luiz
+				Ribeiro para fins acadÍmicos.</div>
 		</div>
 	</footer>
 </body>

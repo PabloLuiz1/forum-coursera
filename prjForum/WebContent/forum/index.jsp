@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<title>FÃ³rum - TÃ³picos criados</title>
+<title>Fórum - Tópicos criados</title>
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -18,18 +18,18 @@
 	<div class="container-fluid mx-0 p-0">
 		<header class="bg-secondary">
 			<div class="alert alert-light col-md-2">
-				OlÃ¡ <strong>${usuario.nome}</strong> <a
+				Olá <strong>${usuario.nome}</strong> <a
 					class="badge badge-danger ml-1 font-weight-bold" href="logout">deslogar</a>
 			</div>
-			<h3 class="text-white ml-4 pt-4 pb-4">FÃ³rum - TÃ³picos criados</h3>
+			<h3 class="text-white ml-4 pt-4 pb-4">Fórum - Tópicos criados</h3>
 			<nav class="navbar navbar-expand-sm bg-gray navbar-light">
 				<nav
 					class="pt-0 pb-0 m-auto navbar navbar-expand-sm bg-secondary navbar-dark justify-content-center font-weight-bold">
 					<ul class="navbar-nav">
-						<li class="nav-item active"><a class="nav-link" href="#">InÃ­cio</a>
+						<li class="nav-item active"><a class="nav-link" href="#">Início</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="novo-topico">Novo
-								tÃ³pico</a></li>
+								tópico</a></li>
 						<li class="nav-item"><a class="nav-link" href="ranking">Ranking</a></li>
 					</ul>
 				</nav>
@@ -37,16 +37,16 @@
 		</header>
 	</div>
 	<div class="container mt-4 p-0" style="min-height: 496px;">
-		<h3>Exibindo os tÃ³picos criados:</h3>
+		<h3>Exibindo os tópicos criados:</h3>
 		<hr>
 		<a href="novo-topico"><button
 				class="btn btn-primary font-weight-bold float-left mb-1">Novo
-				tÃ³pico</button></a> <a href="ranking"><button
+				tópico</button></a> <a href="ranking"><button
 				class="btn btn-primary font-weight-bold float-right mb-1"> <i class="fas fa-list-ol"></i> Ranking</button></a>
 		<table class="table-bordered table-hover table text-center">
 			<thead class="thead-dark font-weight-bold">
 				<tr>
-					<th>TÃ­tulo</th>
+					<th>Título</th>
 					<th>Autor</th>
 					<th>Visualizar</th>
 				</tr>
@@ -69,8 +69,8 @@
 	</div>
 	<footer class="bg-secondary container-fluid text-white">
 		<div class="row">
-			<div class="col text-center">FÃ³rum desenvolvido por Pablo Luiz
-				Ribeiro para fins acadÃªmicos.</div>
+			<div class="col text-center">Fórum desenvolvido por Pablo Luiz
+				Ribeiro para fins acadêmicos.</div>
 		</div>
 	</footer>
 </body>

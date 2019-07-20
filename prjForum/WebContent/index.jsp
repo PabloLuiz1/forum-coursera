@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="UTF-8"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -41,7 +41,7 @@
 					<strong>${erro}</strong>
 				</div>
 			</c:if>
-			<h6>Preencha suas informaÃ§Ãµes para logar no fÃ³rum.</h6>
+			<h6>Preencha suas informações para logar no fórum.</h6>
 			<div class="form-group">
 				<div class="input-group mb-1">
 					<div class="input-group-prepend">
@@ -61,7 +61,7 @@
 				</div>
 			</div>
 			<button class="btn btn-link">
-				<a href="criar-conta">NÃ£o tem uma conta?</a>
+				<a href="criar-conta">Não tem uma conta?</a>
 			</button>
 			<button type="submit"
 				class="btn btn-primary font-weight-bold pull-right">Logar</button>
@@ -69,8 +69,8 @@
 	</div>
 	<footer class="bg-secondary container-fluid text-white">
 		<div class="row">
-			<div class="col text-center">FÃ³rum desenvolvido por Pablo Luiz
-				Ribeiro para fins acadÃªmicos.</div>
+			<div class="col text-center">Fórum desenvolvido por Pablo Luiz
+				Ribeiro para fins acadêmicos.</div>
 		</div>
 	</footer>
 </body>

@@ -22,7 +22,7 @@ public class ForumFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
 		if (req.getSession().getAttribute("usuario") == null) {
-			resp.sendRedirect("../deslogado");
+			resp.sendRedirect("/prjForum/deslogado");
 		}
 		else {
 			chain.doFilter(request, response);
